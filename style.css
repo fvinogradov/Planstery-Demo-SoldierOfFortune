@@ -1,6 +1,7 @@
 #planstery-tooltip{
     pointer-events:none;
     padding: 10px;
+	display: none;
     font-family: Cabin, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 	position: absolute; /* Абсолютное позиционирование */
     z-index: 20;

@@ -1,5 +1,5 @@
 var cubique = [
-{header:"Domik", text:"20"},
+{header:"Домик", text:"Уютный домик на компанию 20-25 человек"},
 {header:"Play-field", text:"Play-field for 10-12 people."},
 {header:"Chocolate", text:"Cotton candy bonbon cotton candy muffin sesame snaps."},
 {header:"Cupcake", text:"Chocolate bar cake croissant. Cheesecake marshmallow caramels cake lollipop."},
