@@ -1,6 +1,6 @@
 var cubique = [
 {header:"Domik", text:"20"},
-{header:"Cheesecake", text:"Bear claw pastry chocolate bar bonbon cheesecake dragee."},
+{header:"Play-field", text:"Play-field for 10-12 people."},
 {header:"Chocolate", text:"Cotton candy bonbon cotton candy muffin sesame snaps."},
 {header:"Cupcake", text:"Chocolate bar cake croissant. Cheesecake marshmallow caramels cake lollipop."},
 {header:"Cake powder", text:"Tart tart applicake ice cream gummi bears jujubes jujubes. Applicake marshmallow marzipan jelly sweet."},
