@@ -1,8 +1,8 @@
-var cubique = [
-{header:"�����", text:"������ ����� �� �������� 20-25 �������"},
-{header:"Play-field", text:"Play-field for 10-12 people."},
-{header:"Chocolate", text:"Cotton candy bonbon cotton candy muffin sesame snaps."},
-{header:"Cupcake", text:"Chocolate bar cake croissant. Cheesecake marshmallow caramels cake lollipop."},
+﻿var cubique = [
+{header:"Домик", text:"Уютный домик на компанию 20-25 человек", img:"images/23d.jpg"},
+{header:"Футбольное поле", text:"Футбольное поле на 10-12 человек."},
+{header:"Лесная площадка", text:"В центре расположен корабль «Черная жемчужина», а по периметру в хаотичном порядке располагаются различные строения — укрытия."},
+{header:"Главная поляна", text:"Место для проведения различных сценарных и сюжетно-приключенческих игр."},
 {header:"Cake powder", text:"Tart tart applicake ice cream gummi bears jujubes jujubes. Applicake marshmallow marzipan jelly sweet."},
 {header:"Tart", text:"Brownie powder powder carrot cake lollipop souffle. Halvah lemon drops jelly chocolate cake tiramisu dessert tootsie roll sweet."},
 {header:"Croissant", text:"Cupcake applicake applicake pie lollipop pastry caramels oat cake sweet. "},
@@ -24,18 +24,22 @@ var cubique = [
 {header:"Lollipop apple", text:"Cheesecake marshmallow caramels cake lollipop."}
 ];
 
+window.onerror = function(x, y, z) {
+console.log(JSON.stringify(x) + " " + y + " " + z);
+}
+
 $(document).ready(function() {
 	Planstery.bind("onselect" , function(id){
 		var mainContainer = $("#planstery-main-container");
 		clr();
-		toolTip(cubique[id[0].id - 1].header, cubique[id[0].id -1].text, id[0]);
+		toolTip(cubique[id[0].id - 1].header, cubique[id[0].id -1].text, id[0], cubique[id[0].id-1].img);
 	});
 	Planstery.bind("ondeselect" , function(){
 		toolTip();
 	});
 	Planstery.bind("onmouseenter" , function(id){			
-		toolTip(cubique[id.id - 1].header, cubique[id.id - 1].text, id);
-	});
+		toolTip(cubique[id.id - 1].header,'',id);
+	});//cubique[id.id - 1].text,
 	Planstery.bind("onmouseleave" , function(id){
 		toolTip();
 	});
@@ -44,13 +48,13 @@ $(document).ready(function() {
 	});
 	Planstery.bind("ondocumentloadcomplete" , function() {
 
-		Planstery.setStyleForObject({
+		/*Planstery.setStyleForObject({
 				"obj-id": "2",
 				"selection-color": "rgba(144, 238, 144, 0.9)",
 				"background-color": "rgba(144,238, 144, 0.6)",
 				"hover-color": "rgba(144, 238, 144, 0.8)"
 			});
-		});
+		});*/
 });
 
 
@@ -63,7 +67,7 @@ function clr() {
 }
 
 
-function toolTip(header, text, object) {
+function toolTip(header, text, object, img) {
 	var tooltip = $("#planstery-tooltip");
 	var tooltipHeader = $("#planstery-tooltip-header");
 	var tooltipText = $("#planstery-tooltip-text");
@@ -73,12 +77,19 @@ function toolTip(header, text, object) {
 		var x = mainContainer.offset().left + object.bounds.center.x;
 		var y = mainContainer.offset().top + object.bounds.center.y - object.bounds.height/2 - 20;
 		tooltipHeader.text(header);
-		tooltipText.text(text);
+		tooltipText.css({"display":"none"})
 		tooltip.css({
 			"display": "block",
 			"left": x - w/2 + 'px',
 			"top": y - tooltip.height() + 'px'
 		})
+		if(text){
+			tooltipText.text(text);
+			tooltipText.css({"display":"block"})
+//			if(img){
+					
+//				}
+		}
 	} else { 
 		tooltip.css("display", "none");
 	} 
