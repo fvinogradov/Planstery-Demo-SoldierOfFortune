@@ -56,33 +56,44 @@ function clr() {
 	Planstery.clearSelection();
 }
 
-
 function toolTip(header, text, object, img) {
 	var tooltip = $("#planstery-tooltip");
 	var tooltipHeader = $("#planstery-tooltip-header");
 	var tooltipText = $("#planstery-tooltip-text");
+	var img = $("#image");
 	w = 150; // Tooltip's wigth
 	var mainContainer = $("#planstery-main-container");
-	var str = "Free Web Building Tutorials!";
 	if (header) {
 		var x = mainContainer.offset().left + object.bounds.center.x;
 		var y = mainContainer.offset().top + object.bounds.center.y - object.bounds.height/2 - 20;
 		tooltipHeader.text(header);
-		tooltipText.css({"display":"none"})
+		tooltipText.css({"display":"none"});
+		ShowImage(object);
 		tooltip.css({
 			"display": "block",
 			"left": x - w/2 + 'px',
 			"top": y - tooltip.height() + 'px'
 		})
 		if(text){
-			//tooltipText.text(text+'\n'+str.link("http://www.w3schools.com"));
+			tooltipText.text(text);
 			tooltipText.css({"display":"block"})
-			//document.write(str.link("http://www.w3schools.com"));
-//			if(img){
-					
-//				}
 		}
 	} else { 
 		tooltip.css("display", "none");
+	img.css("display","none");
 	} 
+}
+
+function ShowImage(object){
+	var img = $("#image");
+	w = 150;
+	var mainContainer = $("#planstery-main-container");
+	var x = mainContainer.offset().left + object.bounds.center.x;
+	var y = mainContainer.offset().top + object.bounds.center.y + object.bounds.height + 75	;
+	img.css({
+	"display":"block",
+	"left": x + 'px',
+	"top": y - img.height() + 'px'
+	});
+	
 }
