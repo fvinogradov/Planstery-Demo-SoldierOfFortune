@@ -24,10 +24,6 @@
 {header:"Lollipop apple", text:"Cheesecake marshmallow caramels cake lollipop."}
 ];
 
-window.onerror = function(x, y, z) {
-console.log(JSON.stringify(x) + " " + y + " " + z);
-}
-
 $(document).ready(function() {
 	Planstery.bind("onselect" , function(id){
 		var mainContainer = $("#planstery-main-container");
@@ -48,13 +44,13 @@ $(document).ready(function() {
 	});
 	Planstery.bind("ondocumentloadcomplete" , function() {
 
-		/*Planstery.setStyleForObject({
+		Planstery.setStyleForObject({
 				"obj-id": "2",
 				"selection-color": "rgba(144, 238, 144, 0.9)",
 				"background-color": "rgba(144,238, 144, 0.6)",
 				"hover-color": "rgba(144, 238, 144, 0.8)"
 			});
-		});*/
+		});
 });
 
 
