@@ -39,7 +39,7 @@ $(document).ready(function() {
 		toolTip();
 	});
 	Planstery.bind("ondocumentloadcomplete" , function() {
-
+		document.getElementById("img1").src = images[18].src;
 		Planstery.setStyleForObject({
 				"obj-id": "2",
 				"selection-color": "rgba(144, 238, 144, 0.9)",

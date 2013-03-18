@@ -2307,16 +2307,11 @@ margin-right: 10px;
     -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
 }
 
-#image{
-	position: absolute;
-	display: none;
-	min-height: 150px;
-	width: 150px;
-	background-image: url(images/23d.jpg);
-}
-
 #text_field{
-	line-height: 16px;
+	line-height: 25px;
+    font-size: 24px;
+    font-family: Lobster, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;	
+	color: rgb(210,105,30);
 	matgin: auto;
 	position: absolute;
 	display: none;
