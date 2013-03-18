@@ -33,7 +33,7 @@ $(document).ready(function() {
 		toolTip(cubique[id.id - 1].header, id);
 	});//cubique[id.id - 1].text,
 	Planstery.bind("onmouseleave" , function(id){
-		toolTip();
+		//toolTip();
 	});
 	Planstery.bind("onplandragstart" , function(){
 		toolTip();
