@@ -36,7 +36,7 @@ $(document).ready(function() {
 		//toolTip();
 	});
 	Planstery.bind("onplandragstart" , function(){
-		toolTip();
+		//toolTip();
 	});
 	Planstery.bind("ondocumentloadcomplete" , function() {
 		document.getElementById("img1").src = images[18].src;
