@@ -10,7 +10,7 @@
 {header:"Домик", text:"Теплый домик на команию 20 человек."},
 {header:"Домик", text:"Теплый домик на 6-8 человек."},
 {header:"Домик", text:"Самое большое отапливаемое помещение в Солдате Удачи на 100 человек. "},
-{header:"Служебное помещение", text:"Слудебное помешенме для хранения винтовок и снаряжения"},
+{header:"Служебное помещение", text:"Служебное помещение для хранения винтовок и снаряжения"},
 {header:"Баня", text:" Березовые венечки, теплый предбанник с уютной обстановкой, а самое главное теплая атмосфера."},
 {header:"Терраса", text:"Помещение на компанию 30-40 человек."},
 {header:"Охотничий домик", text:"Первый этаж - комната с камином на 20 человек, мансарда на 25-30 человек."},
@@ -20,8 +20,11 @@
 ];
 
 $(document).ready(function() {
+	var lastSelectId = null;
 	Planstery.bind("onselect" , function(id){
-		clr();
+		//clr();
+		//Planstery.deselectObjects([lastSelectId]);
+		lastSelectId = id[0].id;
 		toolTip(cubique[id[0].id - 1].header, id[0]);
 		ShowImage(cubique[id[0].id -1].text, id[0].id - 1);
 	});
@@ -33,7 +36,7 @@ $(document).ready(function() {
 		toolTip(cubique[id.id - 1].header, id);
 	});//cubique[id.id - 1].text,
 	Planstery.bind("onmouseleave" , function(id){
-		//toolTip();
+		toolTip();
 	});
 	Planstery.bind("onplandragstart" , function(){
 		//toolTip();
@@ -41,10 +44,112 @@ $(document).ready(function() {
 	Planstery.bind("ondocumentloadcomplete" , function() {
 		document.getElementById("img1").src = images[18].src;
 		Planstery.setStyleForObject({
+				"obj-id": "1",
+				"selection-color": "rgba(114, 7, 7, 0.7)",
+				"background-color": "rgba(205,133, 63, 0.6)",
+				"hover-color": "rgba(102, 10, 0, 0.8)"
+			});		
+		Planstery.setStyleForObject({
 				"obj-id": "2",
-				"selection-color": "rgba(144, 238, 144, 0.9)",
+				"selection-color": "rgba(144, 238, 144, 0.7)",
 				"background-color": "rgba(144,238, 144, 0.6)",
 				"hover-color": "rgba(144, 238, 144, 0.8)"
+			});
+		Planstery.setStyleForObject({
+				"obj-id": "3",
+				"selection-color": "rgba(210,180,140, 0.7)",
+				"background-color": "rgba(222,184,135, 0.6)",
+				"hover-color": "rgba(205,133,63, 0.6)"
+			});		
+		Planstery.setStyleForObject({
+				"obj-id": "4",
+				"selection-color": "rgba(177,151,21, 0.7)",
+				"background-color": "rgba(199,183,74, 0.6)",
+				"hover-color": "rgba(175,148,79, 0.6)"
+			});					
+		Planstery.setStyleForObject({
+				"obj-id": "5",
+				"selection-color": "rgba(139,69,19, 0.7)",
+				"background-color": "rgba(205,133, 63, 0.6)",
+				"hover-color": "rgba(160,82,45, 0.8)"
+			});		
+		Planstery.setStyleForObject({
+				"obj-id": "6",
+				"selection-color": "rgba(139,69,19, 0.7)",
+				"background-color": "rgba(205,133, 63, 0.6)",
+				"hover-color": "rgba(160,82,45, 0.8)"
+			});		
+		Planstery.setStyleForObject({
+				"obj-id": "7",
+				"selection-color": "rgba(139,69,19, 0.7)",
+				"background-color": "rgba(205,133, 63, 0.6)",
+				"hover-color": "rgba(160,82,45, 0.8)"
+			});			
+		Planstery.setStyleForObject({
+				"obj-id": "8",
+				"selection-color": "rgba(80,80,80, 0.7)",
+				"background-color": "rgba(80,80,80, 0.6)",
+				"hover-color": "rgba(80,80,80, 0.8)"
+			});				
+		Planstery.setStyleForObject({
+				"obj-id": "9",
+				"selection-color": "rgba(220,20,60, 0.7)",
+				"background-color": "rgba(205,92,92, 0.6)",
+				"hover-color": "rgba(240,128,128, 0.8)"
+			});
+		Planstery.setStyleForObject({
+				"obj-id": "10",
+				"selection-color": "rgba(220,20,60, 0.7)",
+				"background-color": "rgba(205,92,92, 0.6)",
+				"hover-color": "rgba(240,128,128, 0.8)"
+			});
+		Planstery.setStyleForObject({
+				"obj-id": "11",
+				"selection-color": "rgba(220,20,60, 0.7)",
+				"background-color": "rgba(205,92,92, 0.6)",
+				"hover-color": "rgba(240,128,128, 0.8)"
+			});	
+		Planstery.setStyleForObject({
+				"obj-id": "12",
+				"selection-color": "rgba(220,20,60, 0.7)",
+				"background-color": "rgba(205,92,92, 0.6)",
+				"hover-color": "rgba(240,128,128, 0.8)"
+			});		
+		Planstery.setStyleForObject({
+				"obj-id": "13",
+				"selection-color": "rgba(192,192,192, 0.7)",
+				"background-color": "rgba(160,160,160, 0.6)",
+				"hover-color": "rgba(169,169,169, 0.8)"
+			});		
+		Planstery.setStyleForObject({
+				"obj-id": "14",
+				"selection-color": "rgba(220,20,60, 0.7)",
+				"background-color": "rgba(205,92,92, 0.6)",
+				"hover-color": "rgba(240,128,128, 0.8)"
+			});	
+		Planstery.setStyleForObject({
+				"obj-id": "15",
+				"selection-color": "rgba(192,192,192, 0.7)",
+				"background-color": "rgba(160,160,160, 0.6)",
+				"hover-color": "rgba(169,169,169, 0.8)"
+			});			
+		Planstery.setStyleForObject({
+				"obj-id": "16",
+				"selection-color": "rgba(139,69,19, 0.7)",
+				"background-color": "rgba(205,133, 63, 0.6)",
+				"hover-color": "rgba(160,82,45, 0.8)"
+			});			
+		Planstery.setStyleForObject({
+				"obj-id": "17",
+				"selection-color": "rgba(139,69,19, 0.7)",
+				"background-color": "rgba(205,133, 63, 0.6)",
+				"hover-color": "rgba(160,82,45, 0.8)"
+			});			
+			Planstery.setStyleForObject({
+				"obj-id": "18",
+				"selection-color": "rgba(121, 132, 144, 0.7)",
+				"background-color": "rgba(112,128,144, 0.6)",
+				"hover-color": "rgba(128, 128, 128, 0.8)"
 			});
 		});
 });
