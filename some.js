@@ -22,7 +22,7 @@
 $(document).ready(function() {
 	var lastSelectId = null;
 	Planstery.bind("onselect" , function(id){
-		//clr();
+		clr();
 		//Planstery.deselectObjects([lastSelectId]);
 		lastSelectId = id[0].id;
 		toolTip(cubique[id[0].id - 1].header, id[0]);
@@ -190,6 +190,8 @@ function toolTip(header, object) {
 var images = new Array();
 images[0] = new Image(50,50);
 images[0].src="images/1.png";
+images[3] = new Image(50,50);
+images[3].src="images/4.png";
 images[4] = new Image(50,50);
 images[4].src="images/5.png";
 images[5]=new Image(50,50);
@@ -217,11 +219,13 @@ images[18].src="images/19.png";
 
 function ShowImage(text, id){
 	var text_field = $("#text_field");	
+	var img = $("#img1");
 	if(text){
 		text_field.css({
 		"display":"block",
 		});
 		text_field.text(text);
+		img.css({"margin-top":text_field.height()+'px'});
 		if (images[id] !== undefined){
 		document.getElementById("img1").src = images[id].src;}
 		else {
@@ -229,5 +233,6 @@ function ShowImage(text, id){
 	} else {
 		text_field.css("display", "none");
 		document.getElementById("img1").src = images[18].src;
+		img.css({"margin-top":'10px'});
 	}
 }

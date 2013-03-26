@@ -2250,14 +2250,6 @@ margin-right: 10px;
 
 .art-blockheader .t, .art-vmenublockheader .t {white-space: nowrap;}
 
-#image-container{
-	display: block;
-	min-height: 150px;
-	width: 150px;
-	position: absolute;
-	z-index: 20;
-}
-
 #planstery-tooltip{
     pointer-events:none;
     padding: 10px;
@@ -2308,12 +2300,31 @@ margin-right: 10px;
 }
 
 #text_field{
-	line-height: 25px;
-    font-size: 24px;
+	line-height: 24px;
+    font-size: 22px;
     font-family: Lobster, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;	
 	color: rgb(210,105,30);
-	matgin: auto;
+	margin: auto;
+	margin-right:11px;
 	position: absolute;
 	display: none;
+	/*min-height: 150px;*/
+	z-index:21;
+	border-bottom:5px;
+}
+
+#image-container{
+	display: block;
 	min-height: 150px;
+	width: 150px;
+	position: absolute;
+	z-index: 20;
+}
+
+#img1{
+	display: block;
+	min-height: 150px;
+	min-width: 150px;
+	position: absolute;
+	z-index: 20;
 }
