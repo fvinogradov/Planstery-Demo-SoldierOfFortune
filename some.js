@@ -20,11 +20,7 @@
 ];
 
 $(document).ready(function() {
-	var lastSelectId = null;
 	Planstery.bind("onselect" , function(id){
-		clr();
-		//Planstery.deselectObjects([lastSelectId]);
-		lastSelectId = id[0].id;
 		toolTip(cubique[id[0].id - 1].header, id[0]);
 		ShowImage(cubique[id[0].id -1].text, id[0].id - 1);
 	});
